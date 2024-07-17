@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Grafica from "../components/Grafica";
 import Grafica_2 from "../components/Grafica_2";
+import Carousel from "../components/Carousel"
 
 const API = 'https://restcountries.com/v3.1/all';
 
@@ -23,7 +24,8 @@ const Hero = () => {
   }, []);
 
   // Obtener primeros datos para mostrar en la sección de países destacados
-  const primerosDatos = datos.slice(0, 8);
+  const primerosDatos = datos.slice(0, 12);
+
 
   return (
     <>
@@ -51,9 +53,13 @@ const Hero = () => {
         </header>
         <main className="py-5 py-md-8 py-lg-10">
           <div className="container border rounded-2">
-            <h2 className="text-center lead fs-2 m-3 mb-lg-8">Países Destacados</h2>
+            <h2 className="text-center lead fs-2 m-2 mb-lg-8">Países Destacados</h2>
             <hr />
-            <div className="row m-4">
+            <div className="row m-4 ">
+              <div className="mb-4">
+                <Carousel />
+              </div>
+              <hr />
               {primerosDatos.map((item, index) => (
                 <div key={index} className="col-12 col-md-6 col-lg-3 mb-4">
                   <Card item={item} />

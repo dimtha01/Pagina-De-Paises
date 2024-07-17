@@ -124,13 +124,11 @@ const LinesChart = () => {
           return Array.from(indices);
         };
 
-        // Get 10 random unique indexes
         const IndicesAleatorios = getIndicesAleatorios(data.length, 10);
 
-        // Extracting data for the chart
         const etiquetas = IndicesAleatorios.map(index => getPrimeraPalabra(data[index].name.common));
-        const areas = IndicesAleatorios.map(index => data[index].area / 1000); // Convert area to mil of km²
-        const poblaciones = IndicesAleatorios.map(index => data[index].population / 1000000); // Convert population to millions
+        const areas = IndicesAleatorios.map(index => data[index].area / 1000);
+        const poblaciones = IndicesAleatorios.map(index => data[index].population / 1000000);
 
         setData({
           labels: etiquetas,
