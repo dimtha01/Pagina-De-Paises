@@ -1,6 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import FiltroContinentes from "./FiltroContinetes";
+import FiltroSubContinetes from "./FiltroSubContinetes";
+import { useState } from "react";
 
 const Header = () => {
+  const [inputValue, setInputValue] = useState('');
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+    console.log(inputValue)
+  };
+
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate('/Paginas/buscar', {
+      state: inputValue,
+    });
+
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-header rounded-5 shadow-lg navbar-custom style={{
@@ -25,13 +42,18 @@ const Header = () => {
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Continentes
                 </a>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                  <FiltroContinentes />
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sub Region
+                </a>
+                <ul className="dropdown-menu">
+                  <FiltroSubContinetes />
                 </ul>
               </li>
               <li className="nav-item">
@@ -40,6 +62,7 @@ const Header = () => {
             </ul>
             <form className="d-flex rounded-pill overflow-hidden border border-light" role="search" style={{ borderWidth: '2px' }}>
               <input
+                value={inputValue} onChange={handleChange}
                 className="form-control rounded-0 border-0"
                 type="search"
                 placeholder="Buscar"

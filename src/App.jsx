@@ -4,6 +4,9 @@ import Error404 from "./page/Error404"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Paises from "./page/Paises"
+import Continentes from "./page/Continentes"
+import { SubContinentes } from "./page/SubContinentes"
+import Buscar from "./page/Buscar"
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/paises" element={<Paises />} />
+          <Route path="/continentes/:id" element={<Continentes />} />
+          <Route path="/subContinentes/:id" element={<SubContinentes />} />
+          <Route path="/buscar" element={<Buscar />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
