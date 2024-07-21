@@ -34,9 +34,9 @@ const Paises = () => {
     const datosActuales = datos.slice(indiceInicio, indiceFin);
 
     return (
-        <div className="container text-center m-10 bg-gradient-to-r min-vh-100 rounded-3">
+        <div className="container m-10 bg-gradient-to-r min-vh-100 rounded-3">
             <div className="row">
-                <h1 className="text-center m-3 lead fs-1">Todos los Paises</h1>
+                <h1 className="m-3 lead fs-1">Todos los Paises</h1>
                 {datosActuales.map((item, index) => (
                     <div key={index} className="col-12 col-md-6 col-lg-3 mb-4">
                         <Card item={item} />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Grafica from "../components/Grafica";
 import Grafica_2 from "../components/Grafica_2";
+import Grafica_3 from "../components/Grafica_3";
 import Carousel from "../components/Carousel"
 
 const API = 'https://restcountries.com/v3.1/all';
@@ -80,6 +81,17 @@ const Hero = () => {
               <hr />
               <div className="h-100">
                 <Grafica />
+              </div>
+            </div>
+          </div>
+          <div className="col-12 mb-4 ">
+            <div className="container-fluid border text-light rounded-2 h-100">
+              <h1 className="d-flex justify-content-center align-items-center m-2 lead">
+                Los 10 Paises con mas poblacion en el Mundo <i className='bx bx-line-chart fs-3 ms-2'></i>
+              </h1>
+              <hr />
+              <div className="h-100">
+                <Grafica_3 />
               </div>
             </div>
           </div>

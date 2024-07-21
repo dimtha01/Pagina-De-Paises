@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const API = 'https://restcountries.com/v3.1/all';
 
-const FiltroContinentes = () => {
+const FiltroRegion = () => {
   const [continentes, setContinentes] = useState([]);
 
   const getDatos = async () => {
@@ -31,4 +31,4 @@ const FiltroContinentes = () => {
   )
 };
 
-export default FiltroContinentes;
+export default FiltroRegion;
